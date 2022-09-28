@@ -1,7 +1,8 @@
-package algorithm;
+package algorithm01_01;
+
 
 import java.util.*;
-
+// 문자찾기
 public class Main {
 	public int solution(String str, char t){
 		return (int) str.chars().filter(c -> Character.toUpperCase(c) == Character.toUpperCase(t)).count();
