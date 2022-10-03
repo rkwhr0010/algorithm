@@ -1,34 +1,33 @@
 package algorithm02_11;
 
+
 import java.util.*;
 import java.util.Map.Entry;
 class Main {	
 	public int solution(int n, int[][] arr){
-		HashMap<Integer, HashSet<Integer>> map = new HashMap<Integer, HashSet<Integer>>();
-		for(int i = 1 ; i < arr.length;i++) {
-			map.put(i,new HashSet<Integer>());
-		}
-		for(int i=1;i<arr.length;i++) {
-			Set set = map.get(i);
-			for(int j=1; j < arr[i].length; j++) {
-				int ban = arr[i][j];
-				for(int z=1;z<arr.length;z++) {
-					if(ban == arr[z][j]) {
-						set.add(z);
+		int answer = 0;
+		int max = Integer.MIN_VALUE;
+		
+		//기준 학생 x 축
+		for(int i=1;i<=n;i++) {
+			int count = 0;
+			//비교할 학생 x 축
+			for(int j=1;j<=n;j++) {
+				//학년 배열 y축 기준학생과 비교할 학생은 y축은 공유한다.
+				for(int k=1;k<6;k++) {
+					//나 자신도 포함되지만, 모든 학생이 동등한 조건이므로 상관없다.
+					if(arr[i][k]==arr[j][k]) {
+						count++;
+						break;
 					}
 				}
 			}
+			if(max<count) {
+				max = count;
+				answer = i;
+			}
 		}
-		Entry<Integer, HashSet<Integer>> entry = map.entrySet()
-		   .stream()
-		   .reduce((e1,e2)->{
-			   if(e1.getValue().size()<e2.getValue().size() ) {
-				   return e2;
-			   }else {
-				   return e1;
-			   }
-		   }).get();
-		return entry.getKey();
+		return answer;
 	}
 
 	public static void main(String[] args){
