@@ -1,7 +1,7 @@
 package algorithm06;
 import java.util.*;
 //Least Recently Used
-class Main05_04 {	
+class Main06_04 {	
 	public int[] solution(int size, int n, int[] arr){
 		int[] cache = new int[size];
 		
@@ -28,7 +28,7 @@ class Main05_04 {
 		return cache;
 	}
 	public static void main(String[] args){
-		Main05_04 T = new Main05_04();
+		Main06_04 T = new Main06_04();
 		Scanner kb = new Scanner(System.in);
 		int s=kb.nextInt();
 		int n=kb.nextInt();

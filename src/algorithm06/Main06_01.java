@@ -1,7 +1,7 @@
 package algorithm06;
 import java.util.*;
 //선택정렬
-class Main05_01 {	
+class Main06_01 {	
 	//규칙1, 앞자리를 가장 작은 수로 채우면서 나아간다. 
 	//규칙2, 나보다 작은 수를 만나면 교체하여 끝까지 순회한다.
 	// 제일 중요한 것은 인덱스 위치를 저장한다는 것(작은 것)
@@ -25,7 +25,7 @@ class Main05_01 {
 		return arr;
 	}
 	public static void main(String[] args){
-		Main05_01 T = new Main05_01();
+		Main06_01 T = new Main06_01();
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();
 		int[] arr=new int[n];

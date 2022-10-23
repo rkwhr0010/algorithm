@@ -1,6 +1,6 @@
 package algorithm06;
 import java.util.*;
-class Main05_02 {	
+class Main06_02 {	
 	//규칙1, 뒷자리를 제일 큰 수로 채우면서 줄여간다. 
 	//규칙2, 나보다 큰 수를 만나면 교체하여 끝까지 순회한다.
 	// 결과적으로 제일 끝자리부터 채워간다.
@@ -19,7 +19,7 @@ class Main05_02 {
 		return arr;
 	}
 	public static void main(String[] args){
-		Main05_02 T = new Main05_02();
+		Main06_02 T = new Main06_02();
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();
 		int[] arr=new int[n];

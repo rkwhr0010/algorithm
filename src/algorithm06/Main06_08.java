@@ -2,7 +2,7 @@ package algorithm06;
 import java.util.*;
 //이분 검색
 //조건 반드시 정렬된 상태여야 함
-class Main05_08 {
+class Main06_08 {
 	public int solution(int n, int m, int[] arr){
 		Arrays.sort(arr);
 		int lt=0,rt=arr.length-1,answer=0;
@@ -20,7 +20,7 @@ class Main05_08 {
 		return answer;
 	}
 	public static void main(String[] args){
-		Main05_08 T = new Main05_08();
+		Main06_08 T = new Main06_08();
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();
 		int m=kb.nextInt();

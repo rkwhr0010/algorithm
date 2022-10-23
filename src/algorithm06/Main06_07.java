@@ -17,7 +17,7 @@ class Point implements Comparable<Point>{
 		
 }
 
-class Main05_07 {	
+class Main06_07 {	
 	public static void main(String[] args){
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();

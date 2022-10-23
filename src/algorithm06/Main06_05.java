@@ -2,7 +2,7 @@ package algorithm06;
 
 import java.util.*;
 //중복체크
-class Main05_05 {
+class Main06_05 {
 	public String solution(int n, int[] arr) {
 		String answer = "U";
 		HashSet<Integer> hs = new HashSet<Integer>();
@@ -23,7 +23,7 @@ class Main05_05 {
 
  */
 	public static void main(String[] args) {
-		Main05_05 T = new Main05_05();
+		Main06_05 T = new Main06_05();
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();
 		int[] arr = new int[n];

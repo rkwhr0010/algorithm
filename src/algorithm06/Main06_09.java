@@ -7,7 +7,7 @@ import java.util.*;
 6 5 8 5 6 8 7 6 6 7 
 24
  */
-class Main05_09 {
+class Main06_09 {
 	public int solution(int n, int m, int[] arr){
 		int answer=0;
 		Arrays.sort(arr);
@@ -39,7 +39,7 @@ class Main05_09 {
 	}
 	
 	public static void main(String[] args){
-		Main05_09 T = new Main05_09();
+		Main06_09 T = new Main06_09();
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();
 		int m=kb.nextInt();

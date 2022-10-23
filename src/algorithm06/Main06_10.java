@@ -6,7 +6,7 @@ import java.util.*;
 5 3
 1 2 8 4 9
 */
-class Main05_10 {
+class Main06_10 {
 	public int solution(int n, int c, int[] arr){
 		int answer=0;
 		Arrays.sort(arr);
@@ -41,7 +41,7 @@ class Main05_10 {
 	}
 
 	public static void main(String[] args){
-		Main05_10 T = new Main05_10();
+		Main06_10 T = new Main06_10();
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();
 		int c=kb.nextInt();
