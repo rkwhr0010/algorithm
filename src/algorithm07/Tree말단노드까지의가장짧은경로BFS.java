@@ -1,12 +1,7 @@
 package algorithm07;
 
 import java.util.*;
-/**
- * 말단노드가 없으면 거기가 말단
- */
 
-  
-import java.util.*;
 class Node{ 
     int data; 
     Node lt, rt; 
@@ -29,7 +24,7 @@ public class Tree말단노드까지의가장짧은경로BFS{
     		
     		for (int i = 0; i < len; i++) {
     			Node cur = Q.poll();
-    			if(cur.lt ==null && cur.rt == null) return L;
+    			if(cur.lt ==null && cur.rt == null) return L;//자식노드가 없다면 말단
     			if(cur.lt != null) Q.add(cur.lt);
     			if(cur.rt != null) Q.add(cur.rt);
 			}

@@ -1,6 +1,7 @@
 package algorithm07;
 
 import java.util.*;
+
 class Node2{ 
     int data; 
     Node2 lt, rt; 
@@ -8,6 +9,10 @@ class Node2{
         data=val; 
         lt=rt=null; 
     } 
+    @Override
+    public String toString() {
+    	return data+"";
+    }
 } 
   
 public class BFS레벨탐색{ 
@@ -17,7 +22,7 @@ public class BFS레벨탐색{
 		Q.add(root);
 		int L=0;
         while(!Q.isEmpty()){
-            int len = Q.size();
+            int len = Q.size(); 
 			System.out.print(L+" : ");
             for(int i=0; i<len; i++){
                 Node2 cur = Q.poll();
@@ -29,28 +34,6 @@ public class BFS레벨탐색{
 			System.out.println();
         }
     } 
-  
-    void BFS2(Node2 root) {
-    	Queue<Node2> q = new LinkedList<>();
-    	int L = 0;
-    	q.add(root);
-    	
-    	for(;!q.isEmpty();) {
-    		int size = q.size();
-    		for (int i = 0; i < size; i++) {
-	    		Node2 cur = q.poll();
-	    		System.out.print(cur.data+" ");
-	    		if(cur.lt != null) q.add(cur.lt);
-	    		if(cur.rt != null) q.add(cur.rt);
-    		}
-    		System.out.println();
-    		L++;
-    	}
-    	
-    }
-    
-    
-    
     
     public static void main(String args[]) { 
     	BFS레벨탐색 tree=new BFS레벨탐색(); 
@@ -61,6 +44,6 @@ public class BFS레벨탐색{
         tree.root.lt.rt=new Node2(5); 
 		tree.root.rt.lt=new Node2(6); 
         tree.root.rt.rt=new Node2(7);
-        tree.BFS2(tree.root); 
+        tree.BFS(tree.root); 
     } 
 } 

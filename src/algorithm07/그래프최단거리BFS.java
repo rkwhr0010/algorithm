@@ -1,10 +1,11 @@
 package algorithm07;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-//각정점으로 가는 최소 이동 간선수
+//각 정점으로 가는 최소 이동 간선수
 class 그래프최단거리BFS {
 	static int n, m, answer=0;
 	static ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
@@ -49,7 +50,7 @@ class 그래프최단거리BFS {
 	
 	public static void main(String[] args){
 		그래프최단거리BFS T = new 그래프최단거리BFS();
-		n=6;
+		n=6;//최대 노드
 		ch=new int[n+1];
 		dis=new int[n+1];
 		int[] aArr= {1,1,2,2,3,4,4,6,6};
@@ -63,8 +64,9 @@ class 그래프최단거리BFS {
 			graph.get(a).add(b);
 		}
 		T.BFS2(1);
-		for(int i=2; i<=n; i++){
+		for(int i=1; i<=n; i++){
 			System.out.println(i+" : "+dis[i]);
 		}
+		System.out.println(Arrays.toString(dis));
 	}	
 }
