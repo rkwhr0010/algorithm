@@ -1,6 +1,7 @@
 package algorithm08;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 class 바둑이승차DFS{
 	
 	static int answer=Integer.MIN_VALUE, c, n;
@@ -11,13 +12,14 @@ class 바둑이승차DFS{
 	
 	void DFS2(int L) {
 		if(sum>c) return;
-		if(n<=L) {
+		if(n==L) {
+			System.out.println(answer+"    "+sum);
 			answer = Integer.max(answer, sum);
 			return ;
 		} else {
-			sum+=arr[L];
+			sum+=arr[L];//가산 했을때
 			DFS2(L+1);
-			sum-=arr[L];
+			sum-=arr[L];//가산 안했을때
 			DFS2(L+1);
 		}
 	}
@@ -36,17 +38,18 @@ class 바둑이승차DFS{
 	
 	public static void main(String[] args){
 		바둑이승차DFS T = new 바둑이승차DFS();
-		Scanner kb = new Scanner(System.in);
-		c=kb.nextInt();
-		n=kb.nextInt();
-		arr=new int[n];
-		for(int i=0; i<n; i++){
-			arr[i]=kb.nextInt();
-		}
+		arr= ThreadLocalRandom.current()
+			.ints(10, 100)
+			.distinct()
+			.limit(5)
+			.toArray();
 		
-//		T.DFS(0, 0, arr);
+		//제한 무게
+		c = Arrays.stream(arr).sum()/2;
+		n=arr.length; //받은 요소 수
+		System.out.println(Arrays.toString(arr));
 		T.DFS2(0);
-		
-		System.out.println(answer);
+		System.out.println("제한무게 "+c);
+		System.out.println("최대무게 "+answer);
 	}
 }
